@@ -1,0 +1,19 @@
+{
+  "name": "znd-skills-public",
+  "owner": {
+    "name": "Wilco de Tree",
+    "email": "info@zerononsense.dev"
+  },
+  "metadata": {
+    "description": "ZeroNonsense.dev public skills.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "znd",
+      "source": "./plugins/znd",
+      "description": "Practical, testable agent skills from ZeroNonsense.dev.",
+      "version": "0.1.0"
+    }
+  ]
+}

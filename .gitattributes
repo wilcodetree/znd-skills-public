@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+# Generated from the znd-skills master repo. Never hand-edit.
+plugins/*/skills/** linguist-generated=true

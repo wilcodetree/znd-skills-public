@@ -1,0 +1,11 @@
+{
+  "name": "znd",
+  "version": "0.1.0",
+  "description": "Practical, testable agent skills from ZeroNonsense.dev.",
+  "author": {
+    "name": "Wilco de Tree",
+    "email": "info@zerononsense.dev",
+    "url": "https://zerononsense.dev"
+  },
+  "homepage": "https://zerononsense.dev"
+}
