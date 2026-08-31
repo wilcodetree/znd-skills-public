@@ -13,7 +13,7 @@
       "name": "znd",
       "source": "./plugins/znd",
       "description": "Practical, testable agent skills from ZeroNonsense.dev.",
-      "version": "0.2.8"
+      "version": "0.2.9"
     }
   ]
 }
