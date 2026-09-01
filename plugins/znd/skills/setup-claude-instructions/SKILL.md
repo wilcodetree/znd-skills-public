@@ -1,7 +1,13 @@
 ---
 name: setup-claude-instructions
 description: >-
-  Write a personal set of custom instructions for Claude by interviewing the user about how they want replies structured, formatted and delivered, never by copying someone else's rules onto them. Use on "set up my Claude instructions", "help me write custom instructions", "what should I put in Settings for Claude", "create a CLAUDE.md for me", "how should I tell Claude to talk to me", or Dutch equivalents like "help me met mijn instructies voor Claude". Produces a paste-in text for Claude.ai or Cowork settings, or a CLAUDE.md/AGENTS.md file for a project. Do NOT use this to apply someone else's existing instructions to a new user; the point is to ask, not to reuse.
+  Writes personal custom instructions for Claude by interviewing the user on how they want replies
+  structured, formatted and delivered, never by copying someone else's rules onto them. Use on "set
+  up my Claude instructions", "help me write custom instructions", "what should I put in Settings
+  for Claude", "create a CLAUDE.md for me", "how should I tell Claude to talk to me", or Dutch "help
+  me met mijn instructies voor Claude". Produces paste-in text for Claude.ai/Cowork settings, or a
+  CLAUDE.md/AGENTS.md file. Do NOT use to apply someone else's instructions to a new user; the point
+  is to ask, not reuse.
 ---
 
 # Set up personal Claude instructions
@@ -28,6 +34,7 @@ answer can take, never a default to apply to someone else.
    - For a finished piece of work, do they want a full recap of what changed, or just the outcome
      and a pointer to the file?
    - Any hard length preference, such as "keep routine answers short, only go long when I ask"?
+   - Output: a reply-shape rule you could hand to a stranger and have them apply it consistently.
 
 2. **Ask how they want actions delivered.** Do they run commands themselves afterward? If so, in
    what shell (PowerShell, bash, zsh) and do they want every command as a complete, copyable block,
@@ -41,9 +48,9 @@ answer can take, never a default to apply to someone else.
 
 4. **Ask about hard rules**, the kind that would be a correction if broken: things Claude should
    never do without asking first, things it should always do (cite a source before stating a fact,
-   confirm before an irreversible action, name a model check before starting a task). Do not
-   suggest Wilco's own rules from the worked example as defaults, ask what THIS person's version
-   of each rule is, if they have one at all. Many people will not have a hard rule for every
+   confirm before an irreversible action, name a model check before starting a task). Ask what THIS
+   person's version of each rule is, if they have one at all, rather than suggesting Wilco's own
+   rules from the worked example as defaults. Many people will not have a hard rule for every
    category, that is a valid answer.
 
 5. **Ask about working context worth Claude knowing by default**: role, company, the tools or
@@ -53,11 +60,12 @@ answer can take, never a default to apply to someone else.
 
 6. **Draft the instructions**, organised under clear headings (reply shape, formatting, tone,
    working rules, about me), using their own words and examples wherever they gave one. Keep it
-   as short as it can be while still being specific, a instructions file nobody rereads is dead
+   as short as it can be while still being specific, an instructions file nobody rereads is dead
    weight.
 
 7. **Show the draft back before saving anything.** Ask what to change. This is the step most
-   likely to be skipped and most likely to produce a instructions file that does not actually fit.
+   likely to be skipped and most likely to produce an instructions file that does not actually fit.
+   Done when the user confirms it matches or you have applied their changes.
 
 8. **Save it to the right place**, and say which:
    - Claude.ai or Cowork: paste-in text for Settings, Profile, Preferences (or the equivalent

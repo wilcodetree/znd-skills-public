@@ -1,7 +1,12 @@
 ---
 name: setup-writing-style
 description: >-
-  Build a personal writing-voice skill by interviewing the user and analysing samples of their own writing, then saving it as a reusable skill Claude loads before drafting anything in their name. Use on "set up a writing style skill", "help Claude sound like me", "learn my writing voice", "make drafts sound like me", or Dutch equivalents like "leer mijn schrijfstijl". Covers register, sentence rhythm, per-format rules and hard bans, derived from the user's own samples and answers, never from someone else's rules. Do NOT use this for visual brand identity, that is setup-brand.
+  Builds a personal writing-voice skill by interviewing the user and analysing samples of their own
+  writing, saved as a reusable skill Claude loads before drafting in their name. Use on "set up a
+  writing style skill", "help Claude sound like me", "learn my writing voice", "make drafts sound
+  like me", or Dutch "leer mijn schrijfstijl". Covers register, sentence rhythm, per-format rules and
+  hard bans, derived from the user's own samples and answers, never from someone else's rules. Do
+  NOT use for visual brand identity, that is setup-brand.
 ---
 
 # Set up a writing-voice skill
@@ -23,12 +28,13 @@ which, from actual samples and direct questions, not by assuming any one registe
 1. **Ask for two to four samples** of writing the user is genuinely proud of, in whatever
    languages and formats they actually write (an email, a post, a report, a proposal). Real
    samples beat a description of style every time; most people describe their voice inaccurately
-   but write it accurately without noticing.
+   but write it accurately without noticing. Output: two to four real samples in hand.
 
 2. **Ask which formats they write most often**, since the register that works for a LinkedIn post
    is often wrong for a client email or a status update. If they only ever write one kind of
    thing, one set of rules is enough; if they write several, ask for the differences directly
-   ("what changes between how you write to your team and how you write to a client?").
+   ("what changes between how you write to your team and how you write to a client?"). Output: a
+   list of formats, flagged for whether each needs its own rules.
 
 3. **Ask about register directly**: formal or casual, first person or not, how they feel about
    humour, how direct they want to be when delivering bad news or disagreeing with someone.
@@ -42,7 +48,7 @@ which, from actual samples and direct questions, not by assuming any one registe
 6. **Analyse the samples** for concrete, checkable patterns: sentence length variance (short and
    long mixed, or uniform), how they open a piece (with the conclusion, with context, with a
    question), how much hedging or qualification appears, vocabulary level, and how directly they
-   state disagreement or bad news.
+   state disagreement or bad news. Output: a list of patterns you can point to in the samples.
 
 7. **Write the skill**, following this shape: a short statement of what the voice is for, a
    numbered list of the most checkable, most often broken rules (the ban list belongs here,
@@ -51,7 +57,7 @@ which, from actual samples and direct questions, not by assuming any one registe
    concrete to check against.
 
 8. **Show the draft back against one of their own samples**: does the summary of their voice
-   actually predict what they already wrote? If not, revise before saving.
+   actually predict what they already wrote? If not, revise before saving. Done when it does.
 
 9. **Say where it lives**: a project skill if it only applies to one context, personal or account
    level if it should apply to everything they write.
