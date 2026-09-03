@@ -14,7 +14,7 @@
       "displayName": "ZND Skills Public",
       "source": "./plugins/znd",
       "description": "Practical, testable agent skills from ZeroNonsense.dev.",
-      "version": "0.2.12"
+      "version": "0.2.13"
     }
   ]
 }
