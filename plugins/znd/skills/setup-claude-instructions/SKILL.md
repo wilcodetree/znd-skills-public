@@ -39,7 +39,10 @@ answer can take, never a default to apply to someone else.
 2. **Ask how they want actions delivered.** Do they run commands themselves afterward? If so, in
    what shell (PowerShell, bash, zsh) and do they want every command as a complete, copyable block,
    or is a short description enough? Do they want to know exactly what changed even when Claude
-   makes the edit itself, or is a summary fine?
+   makes the edit itself, or is a summary fine? When a task has several steps, do they want one
+   step per reply (run, paste the output, get the next one) or the whole sequence at once? People
+   who run things by hand tend to want one step per reply: a pre-loaded step 2 gets run before
+   step 1 has been checked.
 
 3. **Ask about tone and language.** Formal or casual, first name or not, one language or does it
    switch with them. Ask directly whether they want Claude to flag its own mistakes plainly at the

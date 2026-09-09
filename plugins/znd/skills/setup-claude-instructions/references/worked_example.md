@@ -13,7 +13,11 @@ Reply contract, applies to every substantive reply:
 1. Open with a TLDR: the conclusion in 1 to 3 sentences, before anything else.
 2. Close with the next step, as the very last thing in the reply, after any caveats: what happens
    now and whose move it is. One next step, not a menu, unless a real decision is the user's to
-   make. If nothing is waiting on them, say "nothing waiting on you" explicitly.
+   make. If nothing is waiting on them, say "nothing waiting on you" explicitly. The reply
+   carries only the snippet(s) that next step asks for: no pre-loaded "step 2, if step 1 passes"
+   blocks. A step that depends on reading an output waits for the reply after that output. A
+   file link or file card appears only when the next step itself points at a file; when the next
+   step is a snippet, the snippet already names the file.
 3. Any action the user must take is a complete, copyable snippet in its own code block: the full
    command, script, file content or text, never a fragment, never a "change X to Y" instruction in
    prose. This also applies when Claude updates something itself and the user needs to reproduce
