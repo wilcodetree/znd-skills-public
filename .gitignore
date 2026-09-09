@@ -1,2 +1,4 @@
 publish-manifest.json
 *.bak
+
+.claude/settings.local.json
