@@ -38,6 +38,29 @@ The unit:
 Container nodes additionally get `01_projects\` (one file per child: goal, what, owner, state)
 and `03_logs\hub_inbox.md`.
 
+## Schema v2: the four fields siteoffice.json gains
+
+A Create or Add run writes `siteoffice.json` at `schemaVersion: 2` with four extra blocks, on top
+of the existing `type`, `name`, `parent`, `children`, `language`, `approver`, `setup` fields:
+
+```
+"settings": {
+  "planningHorizonWeeks": 2,   allowed 1 to 4, default 2
+  "languages": ["en"],         first entry is the node's rendered language
+  "timeRegistration": false
+},
+"labels": {},
+"display_name": "<the node's name>",
+"profiles": {}
+```
+
+An existing v1 manifest (no `schemaVersion` key, or `schemaVersion: 1`) is read with these same
+defaults by the board renderer and is never rewritten to v2 unless the user explicitly says so.
+
+Roadmap convention (architecture note 2026-09-09, section 10): `02_roadmap\roadmap.md` carries a
+numbered priority list first, and an optional `## Backlog` heading (any suffix accepted, for
+example "Backlog (v1.x)") last. Nothing else in the file is read by the board.
+
 ## Step 0: pick the mode
 
 Your first action is to look for a siteoffice.json in or above the folder the user names, to see
@@ -75,7 +98,8 @@ one answer at a time, ready to feed Step 2.
 
 ## Step 2: create the skeleton
 
-Create the folders and files for every requested node.
+Create the folders and files for every requested node. `siteoffice.json` is written at
+`schemaVersion: 2` per the fields above; an existing manifest is never rewritten to v2 here.
 
 **Output:** the skeleton on disk, plus the tree shown to the user for a check before anything
 gets filled in.
@@ -89,7 +113,8 @@ words, tightened, not invented content:
    the Claude Desktop description.
 2. **What is important here, what must never go wrong?** Goes into brief.md and the instructions
    (the refusals).
-3. **Top priorities right now, in order?** Goes into 02_roadmap\roadmap.md.
+3. **Top priorities right now, in order?** Goes into 02_roadmap\roadmap.md as a numbered list,
+   per the roadmap convention above.
 4. **Hard dates in the next months?** Goes into DEADLINES.md, most imminent on top. None is a
    fine answer; write "none known" with the date asked.
 5. **What is running today?** Projects or initiatives with owner and state: one file each in the
