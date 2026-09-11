@@ -33,10 +33,17 @@ The unit:
   03_logs\decisions.md   decisions with their why, newest on top
   03_logs\_history\      rolled-up old DEADLINES and SESSION_LOG content
   04_assets\             briefs, drafts, handovers, date-prefixed YYYY-MM-DD_topic.md
+  05_docs\               optional: this node's own standards and guides, create only when asked
 ```
 
-Container nodes additionally get `01_projects\` (one file per child: goal, what, owner, state)
-and `03_logs\hub_inbox.md`.
+Container nodes additionally get `01_projects\` (one file per child: goal, what, owner, state),
+`03_logs\hub_inbox.md`, and `50_projects\<slug>\` for every child of type project, whether the
+container is the estate root or a company. The estate root, the one node with no parent, may
+also carry `90_docs\` optional: estate-wide standards and guides, create only when asked.
+
+A folder at a root is numbered (a person edits it) or starts with an underscore (a tool writes
+it); a dotfolder is tool config; nothing else belongs at a root. Refuse to create a folder there
+that fits none of these, and propose the matching numbered name instead.
 
 ## Schema v2: the four fields siteoffice.json gains
 
@@ -61,6 +68,11 @@ Roadmap convention (architecture note 2026-09-09, section 10): `02_roadmap\roadm
 numbered priority list first, and an optional `## Backlog` heading (any suffix accepted, for
 example "Backlog (v1.x)") last. Nothing else in the file is read by the board.
 
+A `children` entry in `siteoffice.json` keeps its `type` and `path` fields; a project child's
+`path` now reads `50_projects\<slug>`. An existing manifest whose child path reads
+`projects\<slug>` is read as it is and never rewritten silently, the same rule the schema v2
+fields already follow.
+
 ## Step 0: pick the mode
 
 Your first action is to look for a siteoffice.json in or above the folder the user names, to see
@@ -77,7 +89,9 @@ choice):
   list concretely what is missing (empty sections, a STATUS that contradicts a newer decision,
   deadlines without dates, decisions without a why), then ask the content questions from Step 3
   only for the gaps. Propose each edit and apply it after a yes. Never overwrite silently, never
-  invent facts the user did not give.
+  invent facts the user did not give. When the skill meets a root with a bare `projects\` or
+  `docs\` folder, it says so once and points to `siteoffice-migrate rename-to-rule`; it does not
+  move anything itself.
 
 Every run may stop after any node. **Output:** the chosen mode, plus each node's siteoffice.json
 recording `"setup": "structure-only"` or `"setup": "filled"`, so the next run sees where it
