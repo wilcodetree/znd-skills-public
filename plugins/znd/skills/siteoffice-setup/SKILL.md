@@ -105,7 +105,9 @@ stopped and offers to continue there.
 3. Where on disk? If a structure already exists there, new nodes go inside it.
 4. Who approves decisions, per node or one name for all?
 5. Language of the files? Default is the conversation's language; confirm.
-6. New or existing? Existing files are never overwritten.
+6. Does this node need time registration (WBSO hours)? Sets `settings.timeRegistration` in the
+   schema v2 block.
+7. New or existing? Existing files are never overwritten.
 
 **Output:** the node list, its disk location, approver(s), language and new-vs-existing status,
 one answer at a time, ready to feed Step 2.
@@ -132,7 +134,9 @@ words, tightened, not invented content:
 4. **Hard dates in the next months?** Goes into DEADLINES.md, most imminent on top. None is a
    fine answer; write "none known" with the date asked.
 5. **What is running today?** Projects or initiatives with owner and state: one file each in the
-   parent's 01_projects, plus a STATUS.md snapshot.
+   parent's 01_projects, plus a STATUS.md snapshot. If `timeRegistration` is true for this node,
+   add where hours land: `03_logs\time\YYYY-MM.ndjson`, written by `/log-time-from-sessions` or a
+   manual `log time` chat command.
 6. **What stays human, always?** Beyond the standing set (money, customer sends, publishing):
    anything extra. Goes into AGENTS.md.
 
@@ -160,7 +164,8 @@ paste into Claude Desktop.
 
 **Output:** a numbered, short list: create the project in Claude Desktop, paste name, description
 and instructions, connect the node's folder, start the first chat with "read the instructions
-file and confirm the setup."
+file and confirm the setup." If the node has a rendered board, add: open `_board\board.html` in
+this node's folder to see the dashboard.
 
 ## Rules
 
