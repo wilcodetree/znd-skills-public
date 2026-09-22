@@ -18,7 +18,15 @@ is what costs most for least. Unpriced rows sort by invocations ascending, after
 | `REVIEW` | Any of: 0 invocations but the item exists for rare events (handover, incident response, recovery, backup, sign-off); a misfire; a redundancy pair; thin data (window under 14 days). | Answer the question the skill asks, one item at a time. |
 
 Rare-event list, extend when the human names more: handover, incident, postmortem, deploy
-checklist, recovery, rollback, backup, sign, security review.
+checklist, recovery, rollback, backup, sign, security review, codebase or architecture graph
+query (a tool built to answer a specific hard question precisely, used a handful of times a
+month by design, not every session). Before scoring a low-invocation MCP server or skill as
+`DROP`, check whether it fits this pattern (its description or the human's own account of it
+says "for X question" rather than "use routinely") and ask, rather than assume low use means
+low value. Ask "why do you have this" before proposing `DROP` on anything you cannot place
+into a task class you have seen the human do without it. Getting this wrong once (recommending
+DROP on a set of codebase-graph MCP servers that were rare-event by design, corrected by the
+human 2026-09-22) is the reason this line exists.
 
 ## Misfire
 
