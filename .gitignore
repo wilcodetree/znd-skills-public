@@ -2,3 +2,9 @@ publish-manifest.json
 *.bak
 
 .claude/settings.local.json
+__pycache__/
+*.pyc
+.env
+.env.*
+.DS_Store
+Thumbs.db

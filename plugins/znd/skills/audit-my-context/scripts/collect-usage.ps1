@@ -8,7 +8,7 @@ Read only. No network. Use BurnMon (burnmon-cli.exe tools --json) instead when i
 .EXAMPLE
 # PowerShell on the laptop, from the skill folder
 cd <skill folder>\scripts
-.\collect-usage.ps1 -Since 30 -Out .\usage.json -ExcludeProject 'C:\dev\Work'
+.\collect-usage.ps1 -Since 30 -Out .\usage.json -ExcludeProject 'D:\EmployerWork'
 #>
 [CmdletBinding()]
 param(
