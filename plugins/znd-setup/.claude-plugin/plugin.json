@@ -1,7 +1,7 @@
 {
   "name": "znd-setup",
   "displayName": "ZND Skills Setup",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "One-time setup skills from ZeroNonsense.dev: folder structure, custom instructions, writing style, brand. Install, run once, then disable.",
   "author": {
     "name": "Wilco de Tree",

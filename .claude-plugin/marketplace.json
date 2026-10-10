@@ -14,14 +14,14 @@
       "displayName": "ZND Skills Public",
       "source": "./plugins/znd",
       "description": "Practical, testable agent skills from ZeroNonsense.dev, for daily use.",
-      "version": "3.0.0"
+      "version": "3.1.0"
     },
     {
       "name": "znd-setup",
       "displayName": "ZND Skills Setup",
       "source": "./plugins/znd-setup",
       "description": "One-time setup skills: folder structure, custom instructions, writing style, brand. Install, run once, then disable.",
-      "version": "3.0.0"
+      "version": "3.1.0"
     }
   ]
 }
