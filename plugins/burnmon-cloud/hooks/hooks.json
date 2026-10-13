@@ -1,0 +1,162 @@
+{
+  "description": "BurnMon cloud: writes a usage-only extract of each cloud Cowork session and copies it to BurnMon's drop folder after each write. No prompts or content.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/scripts/extract.py",
+              "--watch"
+            ],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/scripts/extract.py",
+              "--throttle"
+            ],
+            "async": true,
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/scripts/extract.py"
+            ],
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/scripts/extract.py"
+            ],
+            "timeout": 30
+          },
+          {
+            "type": "mcp_tool",
+            "server": "remote-devices",
+            "tool": "device_commit_files",
+            "timeout": 30,
+            "input": {
+              "files": [
+                {
+                  "devicePath": "~/.burnmon/cloud/latest.jsonl",
+                  "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/latest.jsonl"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "FileChanged": [
+      {
+        "matcher": "latest.jsonl",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/scripts/extract.py",
+              "--fired"
+            ],
+            "timeout": 10
+          },
+          {
+            "type": "mcp_tool",
+            "server": "remote-devices",
+            "tool": "device_commit_files",
+            "timeout": 30,
+            "input": {
+              "files": [
+                {
+                  "devicePath": "~/.burnmon/cloud/latest.jsonl",
+                  "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/latest.jsonl"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "remote-devices",
+            "tool": "device_commit_files",
+            "timeout": 30,
+            "input": {
+              "files": [
+                {
+                  "devicePath": "~/.burnmon/cloud/latest.jsonl",
+                  "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/latest.jsonl"
+                }
+              ]
+            }
+          },
+          {
+            "type": "mcp_tool",
+            "server": "remote-devices",
+            "tool": "device_commit_files",
+            "timeout": 30,
+            "input": {
+              "files": [
+                {
+                  "devicePath": "~/.burnmon/cloud/diag.log",
+                  "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/diag.log"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "remote-devices",
+            "tool": "device_commit_files",
+            "timeout": 30,
+            "input": {
+              "files": [
+                {
+                  "devicePath": "~/.burnmon/cloud/latest.jsonl",
+                  "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/latest.jsonl"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
