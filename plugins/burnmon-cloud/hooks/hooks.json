@@ -56,6 +56,20 @@
               "${CLAUDE_PLUGIN_ROOT}/scripts/extract.py"
             ],
             "timeout": 30
+          },
+          {
+            "type": "mcp_tool",
+            "server": "remote-devices",
+            "tool": "device_commit_files",
+            "timeout": 30,
+            "input": {
+              "files": [
+                {
+                  "devicePath": "~/.burnmon/cloud/latest.jsonl",
+                  "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/latest.jsonl"
+                }
+              ]
+            }
           }
         ]
       }
@@ -86,6 +100,26 @@
                 }
               ]
             }
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "remote-devices",
+            "tool": "device_commit_files",
+            "timeout": 30,
+            "input": {
+              "files": [
+                {
+                  "devicePath": "~/.burnmon/cloud/latest.jsonl",
+                  "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/latest.jsonl"
+                }
+              ]
+            }
           },
           {
             "type": "mcp_tool",
@@ -97,6 +131,26 @@
                 {
                   "devicePath": "~/.burnmon/cloud/diag.log",
                   "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/diag.log"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "remote-devices",
+            "tool": "device_commit_files",
+            "timeout": 30,
+            "input": {
+              "files": [
+                {
+                  "devicePath": "~/.burnmon/cloud/latest.jsonl",
+                  "stagedPath": "/mnt/user-data/outputs/.burnmon/cloud/latest.jsonl"
                 }
               ]
             }
