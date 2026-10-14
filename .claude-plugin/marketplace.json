@@ -14,21 +14,21 @@
       "displayName": "ZND Skills Public",
       "source": "./plugins/znd",
       "description": "Practical, testable agent skills from ZeroNonsense.dev, for daily use.",
-      "version": "3.4.3"
+      "version": "3.4.4"
     },
     {
       "name": "znd-setup",
       "displayName": "ZND Skills Setup",
       "source": "./plugins/znd-setup",
       "description": "One-time setup skills: folder structure, custom instructions, writing style, brand. Install, run once, then disable.",
-      "version": "3.4.3"
+      "version": "3.4.4"
     },
     {
       "name": "burnmon-cloud",
       "displayName": "BurnMon cloud",
       "source": "./plugins/burnmon-cloud",
       "description": "Counts the tokens of cloud Cowork sessions for BurnMon on your computer. Usage numbers only: no prompts, answers, tool input or paths.",
-      "version": "3.4.3"
+      "version": "3.4.4"
     }
   ]
 }
