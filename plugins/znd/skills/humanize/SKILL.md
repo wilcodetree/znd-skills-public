@@ -1,6 +1,6 @@
 ---
 name: humanize
-description: Makes written text and chat replies sound like a real person wrote them, not an AI. Strips tells: em-dash overuse, AI vocabulary (delve, leverage, testament...), rule-of-three, hollow summaries, over-formatting, uniform rhythm. Covers cleanup passes, generation guidance for other skills, and chat replies, not just finished deliverables. Load on "humanize this", "make this sound less like AI", "less robotic", "more natural", "sounds AI-generated", "remove the AI tells", "make it sound like me", or when finalizing a text deliverable or substantive chat reply. Defers to writing-style/brand-voice skills on structure and terms; governs texture only.
+description: Makes written text and chat replies sound like a real person wrote them, not an AI. Strips tells such as em-dash overuse, AI vocabulary (delve, leverage, testament...), rule-of-three, hollow summaries, over-formatting, uniform rhythm. Covers cleanup passes, generation guidance for other skills, and chat replies, not just finished deliverables. Load on "humanize this", "make this sound less like AI", "less robotic", "more natural", "sounds AI-generated", "remove the AI tells", "make it sound like me", or when finalizing a text deliverable or substantive chat reply. Defers to writing-style/brand-voice skills on structure and terms; governs texture only.
 ---
 
 # Humanize
