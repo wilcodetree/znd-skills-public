@@ -18,7 +18,7 @@ Each plugin has its own README with the skills and the scheduled tasks worth cre
 
 `siteoffice-setup` and `handover` moved to the Groundwork plugin
 ([siteoffice/groundwork](https://github.com/siteoffice/groundwork)). Removing skills is a major
-version bump here, so the next publish starts a new major version.
+version bump here, so version 4.0.0 removed them.
 
 Claude Code:
 
