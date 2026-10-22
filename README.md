@@ -16,15 +16,19 @@ This marketplace holds two plugins:
 
 Each plugin has its own README with the skills and the scheduled tasks worth creating.
 
+`siteoffice-setup` and `handover` moved to the Groundwork plugin
+([siteoffice/groundwork](https://github.com/siteoffice/groundwork)). Removing skills is a major
+version bump here, so the next publish starts a new major version.
+
 Claude Code:
 
 ```
-/plugin marketplace add wilcodetree/znd-skills-public
+/plugin marketplace add zero-nonsense-dev/znd-skills-public
 /plugin install znd@znd-skills-public
 /plugin install znd-setup@znd-skills-public
 ```
 
-Cowork: Customize, Plugins, Add marketplace, then paste `wilcodetree/znd-skills-public`.
+Cowork: Customize, Plugins, Add marketplace, then paste `zero-nonsense-dev/znd-skills-public`.
 
 ## Install as plain files
 
